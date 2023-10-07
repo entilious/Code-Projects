@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Payment - Tokyo Terror</title>
+</head>
+<body style="background-color: black">
+    <center>
+        <form action="/test.html" method="POST">
+            <label for = "name_id" style="color: white; font-family: Papyrus">Name: </label>
+            <input type="text" id="name_id" name="fname" placeholder="Onizuka" required>
+            <br>
+            <br>
+            <label for = "reg_no" style="color: white; font-family: Papyrus">Registration Number: </label>
+            <input type="text" id="reg_no" name="rgno" placeholder="It'll be there on your ID card" required>
+            <br>
+            <br>
+            <label for = "email" style="color: white; font-family: Papyrus">Email: </label>
+            <input type="email" id="email" name="mail" placeholder="@gitam.in" required>
+            <br>
+            <br>
+            <input type="button" value="Proceed">
+        </form>
+        <a href="upi://pay?pa=$sugarguy11@okhdfcbank&pn=%20&tr=%20&am=$1&cu=INR" class="upi-pay1">
+            <button>Pay Now</button>
+        </a>
+    </center>
+    <footer><marquee>Anime and Manga Club GITAM-VSKP</marquee></footer>
+</body>
+</html>
