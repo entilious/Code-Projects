@@ -1,0 +1,94 @@
+Algorithm – Overview
+
+Pseudocode:
+
+1. Import necessary libraries
+   - Import random for generating random numbers
+   - Import numpy for matrix operations
+
+2. Define special characters array
+
+3. Define Henon Attractor Function
+   - Inputs: coefficients a and b, initial points x0 and y0, number of iterations n
+   - Initialize sequences for x and y with initial points
+   - For each iteration, calculate next x and y using Henon attractor formula
+   - Return sequences x and y
+
+4. Define Logistic Map Function
+   - Inputs: growth rate r, initial value x_init, number of iterations n
+   - Initialize sequence with initial value
+   - For each iteration, calculate next value using logistic map formula
+   - Return the sequence
+
+5. Define Matrix Initialization Function
+   - Inputs: sequences henon_x, henon_y, logistic_seq, and matrix size (default 7)
+   - Initialize empty matrix of given size for storing unique values
+   - Initialize boolean array to track used alphabets
+   - Initialize iterator for special characters
+   - For each value in logistic_seq:
+     - Calculate matrix position (x, y) based on counter
+     - Calculate character index from logistic sequence value
+     - If alphabet not used, use corresponding letter; else use next special character
+     - Update matrix at position (x, y) with value
+     - Increment and wrap counter as needed
+   - Return initialized matrix
+
+6. Define Playfair Cipher Functions (format_text, encrypt_digraph, decrypt_digraph, playfair_encrypt, playfair_decrypt)
+   - format_text: Prepare text for encryption/decryption
+   - encrypt_digraph: Encrypt a pair of characters using matrix
+   - decrypt_digraph: Decrypt a pair of characters using matrix
+   - playfair_encrypt: Encrypt plaintext using formatted text and matrix
+   - playfair_decrypt: Decrypt ciphertext using matrix
+
+7. Define Dynamic Keying Function (for rotation of matrix rows and columns)
+   - Rotate matrix rows and columns based on a step index after each encryption
+
+8. Main Program
+   - Initialize parameters for Henon attractor and logistic map
+   - Generate sequences using Henon attractor and logistic map
+   - Initialize matrix with unique values
+   - Ask user for operation (encrypt or decrypt) and step index for dynamic keying
+   - If encrypt:
+     - Perform encryption with dynamic keying, rotating matrix as specified
+     - Break cipher text into blocks matching step index value
+   - If decrypt:
+     - Determine step index from cipher text blocks
+     - Reverse dynamic keying to reach last encryption state of matrix
+     - Perform decryption by backtracking and un-rotating the key matrix
+     - Read characters in reverse order for decryption
+
+9. End Program
+
+
+Algorithm – Encryption
+
+Function playfair_encrypt(plaintext, matrix, step_index)
+    Initialize ciphertext as an empty string
+    Format plaintext by removing non-letter characters, converting to uppercase, and handling digraphs
+    For each digraph in the formatted plaintext
+        Encrypt the digraph using the current state of the matrix
+        Append the encrypted digraph to the ciphertext
+        Rotate matrix rows and columns based on the step index
+            - Rotate rows: The last row becomes the first, and all other rows move one position down
+            - Rotate columns: The last column becomes the first, and all other columns move one position to the right
+    Split ciphertext into blocks of length equal to the step index value
+    Return the ciphertext blocks
+End Function
+
+
+
+Algorithm – Decryption
+
+Function playfair_decrypt(ciphertext_blocks, matrix, step_index)
+    Initialize plaintext as an empty string
+    Calculate the total number of rotations needed to reach the last encryption state of the matrix
+    Apply these rotations to the matrix to reach its state at the end of the encryption process
+    For each block in ciphertext_blocks read in reverse order
+        For each digraph in the block
+            Decrypt the digraph using the current state of the matrix
+            Prepend the decrypted digraph to the plaintext (since we're processing in reverse)
+            Undo the rotation of matrix rows and columns based on the step index
+                - Undo row rotation: The first row becomes the last, and all other rows move one position up
+                - Undo column rotation: The first column becomes the last, and all other columns move one position to the left
+    Return the plaintext
+End Function
