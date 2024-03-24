@@ -12,7 +12,9 @@ The improved method builds upon the proposed method by incorporating dynamic key
 
 #### Usage
 
-To use the proposed method, you can run the following Python script: [TEPE.py](TEPE.py)
+To use the **improved** proposed method, you can run the following Python script: [TEPE.py](TEPE.py)
+
+To use the proposed method, you can run the following Python script: [proposed.py](proposed.py)
 
 
 ##### Requirements
