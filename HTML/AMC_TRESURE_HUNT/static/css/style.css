@@ -1,0 +1,52 @@
+body{
+    opacity: 0.95;
+    justify-content: center;
+    align-items: center;
+    position: center;
+    background-position: 0% 0%;
+    background-size:  fill;
+    background-attachment: scroll;
+    image-rendering: crisp-edges;
+}
+
+#container{
+    background-color: antiquewhite;
+    position: fixed;
+    top:200px;
+    left: 10%;
+    right: 50%;
+    border: 0.07cm;
+    border-color: black;
+    width: 85%;
+    border-style: groove;
+    border-radius: 0.5cm;
+    height: 50vh;
+
+}
+
+.boot{
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boot #Submit{
+    display: flex;
+    justify-content: center;
+}
+
+#logo{
+    height: 25px;
+    position: fixed;
+    top: 10px;
+    left: 9px;
+}
+
+#Submit{
+    color: black;
+    background-color:  white;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 20%;
+}

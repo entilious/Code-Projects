@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Treasure Hunt Game - Riddle</title>
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Riddle</h1>
+    <p>{{ riddle_text }}</p>
+    <form method="post" action="{{ url_for('check_riddle') }}">
+        <input type="text" name="answer" placeholder="Enter your answer" required>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
