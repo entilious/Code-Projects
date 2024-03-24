@@ -15,7 +15,7 @@ The improved method builds upon the proposed method by incorporating dynamic key
 To use the proposed method, you can run the following Python script: TEPE.py[TEPE.py]
 
 
-#Requirements
+#####Requirements
 
 This project requires Python 3.x and the following libraries:
   NumPy
@@ -24,7 +24,7 @@ You can install the required libraries using pip:
 
 ```pip install numpy```
 
-#####Contributing
+#######Contributing
 
 Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
 
